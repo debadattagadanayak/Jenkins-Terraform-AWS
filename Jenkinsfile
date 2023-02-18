@@ -23,6 +23,10 @@ pipeline {
 
         stage('Plan') {
             steps {
+                sh 'sudo yum install -y wget unzip'
+                sh 'sudo wget https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip ; sudo unzip terraform_1.0.8_linux_amd64.zip -d /usr/local/bin/'
+                sh 'sudo rm terraform_1.0.8_linux_amd64.zip'
+                sh 'echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc'
                 sh 'pwd;cd terraform/ ; terraform init'
                 sh "pwd;cd terraform/ ; terraform plan -out tfplan"
                 sh 'pwd;cd terraform/ ; terraform show -no-color tfplan > tfplan.txt'
