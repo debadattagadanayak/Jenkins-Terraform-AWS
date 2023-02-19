@@ -2,7 +2,7 @@
 Create an ec2 instance  with the help of Terraform and Jenkins
 
 ## Steps:
-1. Create an IAM Role with Administrator previlages in AWS.
+1. Create an IAM User with Administrator previlages in AWS.
 2. Get the Access key ID and Secret Access key.
 3. Add Credentials in Jenkins with the ID names as below.   
     **AWS_ACCESS_KEY_ID**<br />**AWS_SECRET_ACCESS_KEY**
